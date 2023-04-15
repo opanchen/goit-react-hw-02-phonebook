@@ -26,7 +26,7 @@ export class ContactForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        const {name, number} = e.target.elements;
+        const {name} = e.target.elements;
 
         if (this.props.checkContactName(name.value)) {
             alert(`${name.value} is already in contacts.`)
