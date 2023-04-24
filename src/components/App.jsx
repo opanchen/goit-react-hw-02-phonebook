@@ -16,6 +16,12 @@ export class App extends Component {
   }
 
   formSubmitHandler = ({name, number}) => {
+
+    if (this.checkContactName(name)) {
+      alert(`${name} is already in contacts.`)
+      return
+    }
+
     const id = nanoid();
     const newContact = {
       name,
@@ -54,7 +60,6 @@ export class App extends Component {
       <h1>Phonebook</h1>
       <ContactForm 
       onSubmit={this.formSubmitHandler}
-      checkContactName={this.checkContactName}
       />
 
       <h2>Contacts</h2>
